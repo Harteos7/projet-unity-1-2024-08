@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f87017a1-fc8f-4a0e-ba44-00bd585d7eba}">
+		<property name="assetPath">
+			<value>Objects, Luggage, Case, Metal, Impact, Kick, Hit, Single SND0650 10.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.31620833333333331</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8eb46c6a-eaeb-42ba-b9a5-91b1836b2695}</destination>
+		</relationship>
+	</object>
+</objects>
