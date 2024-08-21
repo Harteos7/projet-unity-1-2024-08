@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     {
         // Récupère le composant Rigidbody attaché au GameObject
         rb = GetComponent<Rigidbody>();
-        
     }
 
     void FixedUpdate()
@@ -24,20 +23,20 @@ public class PlayerMovement : MonoBehaviour
         float moveHorizontal = 0f;
         float moveVertical = 0f;
 
-        // Vérification des touches enfoncées
-        if (Input.GetKey(KeyCode.Z))
+        // Vérification des touches enfoncées pour un clavier AZERTY
+        if (Input.GetKey(KeyCode.W))  // Z pour avancer
         {
             moveVertical = 1f;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))  // S pour reculer
         {
             moveVertical = -1f;
         }
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.A))  // Q pour aller à gauche
         {
             moveHorizontal = -1f;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))  // D pour aller à droite
         {
             moveHorizontal = 1f;
         }
