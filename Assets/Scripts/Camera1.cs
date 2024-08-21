@@ -30,12 +30,12 @@ public class Camera1 : MonoBehaviour
             // Rotation basée sur les mouvements de la souris
             currentRotationX += Input.GetAxis("Mouse X") * sensitivity;
             currentRotationY -= Input.GetAxis("Mouse Y") * sensitivity;
-            currentRotationY = Mathf.Clamp(currentRotationY, -30f, 60f);  // Limite la rotation verticale
+            currentRotationY = Mathf.Clamp(currentRotationY, -20f, 60f);  // Limite la rotation verticale
 
             // Calcul de la nouvelle position de la caméra
             Quaternion rotation = Quaternion.Euler(currentRotationY, currentRotationX, 0);
             transform.position = target.position + rotation * offset;
-
+            
             // Faire en sorte que la caméra regarde toujours le joueur
             transform.LookAt(target);
         }
