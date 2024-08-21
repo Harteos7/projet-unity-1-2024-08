@@ -26,11 +26,14 @@ public class Camera1 : MonoBehaviour
     void LateUpdate()
     {
         if (target != null)
-        {
-            // Rotation basée sur les mouvements de la souris
-            currentRotationX += Input.GetAxis("Mouse X") * sensitivity;
-            currentRotationY -= Input.GetAxis("Mouse Y") * sensitivity;
-            currentRotationY = Mathf.Clamp(currentRotationY, -20f, 60f);  // Limite la rotation verticale
+        {          
+            if (Input.GetKey(KeyCode.LeftAlt)) // On doit appuyer sur une touche pour faire tourner la caméra
+            {
+                // Rotation basée sur les mouvements de la souris
+                currentRotationX += Input.GetAxis("Mouse X") * sensitivity;
+                currentRotationY -= Input.GetAxis("Mouse Y") * sensitivity;
+                currentRotationY = Mathf.Clamp(currentRotationY, -20f, 60f);  // Limite la rotation verticale
+            }
 
             // Calcul de la nouvelle position de la caméra
             Quaternion rotation = Quaternion.Euler(currentRotationY, currentRotationX, 0);

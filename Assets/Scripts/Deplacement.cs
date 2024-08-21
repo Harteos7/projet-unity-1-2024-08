@@ -9,9 +9,10 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 10f;
     public float speedSaut = 30f;
+    public Transform cameraTransform; // Référence au Transform de la caméra
     private Rigidbody rb;
     private bool isGrounded;
-
+    
     void Start()
     {
         // Récupère le composant Rigidbody attaché au GameObject
@@ -47,13 +48,21 @@ public class PlayerMovement : MonoBehaviour
             sauter = 1f;
         }
 
-        // Calcul du vecteur de mouvement
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        // Calcul du vecteur de mouvement basé sur la direction de la caméra
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
 
-        // Calcul du vecteur de mouvement
+        // On ignore la direction verticale de la caméra pour le mouvement du joueur
+        forward.y = 0f;
+        right.y = 0f;
+        forward.Normalize();
+        right.Normalize();
+
+        // Direction du mouvement en fonction de l'orientation de la caméra
+        Vector3 movement = (forward * moveVertical + right * moveHorizontal).normalized;
         Vector3 movementSaut = new Vector3(0.0f, sauter, 0.0f);
 
-        // Application du mouvement avec le Rigidbody
+        // Applique la force au joueur
         rb.AddForce(movement * speed);
         rb.AddForce(movementSaut * speedSaut);
 

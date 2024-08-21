@@ -451,6 +451,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cubro
       objectReference: {fileID: 0}
+    - target: {fileID: 4239935377340945091, guid: c5072592217cc3e43a786120d17c340c, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 963194228}
     - target: {fileID: 5676576926531088180, guid: c5072592217cc3e43a786120d17c340c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
