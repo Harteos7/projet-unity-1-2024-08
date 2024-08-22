@@ -2,24 +2,24 @@ using UnityEngine;
 
 public class Camera1 : MonoBehaviour
 {
+    public Transform target;  // Référence au Transform du joueur
     public float sensitivity = 3.0f;  // Sensibilité de la souris pour la rotation
     public float speed = 10f;         // Vitesse de déplacement de la caméra
     public float zoomSpeed = 4f;      // Vitesse de zoom
     public float minZoom = 2f;        // Zoom minimum (distance la plus proche)
     public float maxZoom = 15f;       // Zoom maximum (distance la plus éloignée)
-    public float fixedHeight = 10f;   // Hauteur fixe de la caméra
-    public Vector3 offset = new Vector3(0, 0.5f, -13);  // Décalage initial de la caméra par rapport au joueur
+    public float fixedHeight = 7f;   // Hauteur fixe de la caméra
 
     private float currentRotationX = 0f;
     private float currentRotationY = 0f;
 
     void Start()
-    {
-        // Angle de rotation souhaité
-        float angle = 30.0f;
+    {        
+        // Réajuster la position de la caméra
+        transform.position = new Vector3(0, fixedHeight, -7);
 
-        // Modifier la rotation de la caméra sur l'axe X pour regarder vers le bas à 30 degrés
-        transform.rotation = Quaternion.Euler(angle, 0, 0);
+        // Réajuster la rotation pour regarder vers le bas à 30 degrés
+        transform.rotation = Quaternion.Euler(30, transform.rotation.eulerAngles.y, 0);
     }
 
     void LateUpdate()
@@ -61,6 +61,15 @@ public class Camera1 : MonoBehaviour
         // Appliquer la rotation de la caméra
         transform.rotation = Quaternion.Euler(30, currentRotationX, 0);
         
-
+        // Détection du défilement de la molette de la souris pour zoomer
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        if (scroll != 0)
+        {
+            // Ajuster fixedHeight en fonction du défilement de la molette
+            fixedHeight -= scroll * zoomSpeed;
+            // Clamping pour rester entre minZoom et maxZoom
+            fixedHeight = Mathf.Clamp(fixedHeight, minZoom, maxZoom);
+        }
+        
     }
 }
