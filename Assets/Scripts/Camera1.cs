@@ -15,7 +15,11 @@ public class Camera1 : MonoBehaviour
 
     void Start()
     {
+        // Angle de rotation souhaité
+        float angle = 30.0f;
 
+        // Modifier la rotation de la caméra sur l'axe X pour regarder vers le bas à 30 degrés
+        transform.rotation = Quaternion.Euler(angle, 0, 0);
     }
 
     void LateUpdate()
@@ -53,5 +57,10 @@ public class Camera1 : MonoBehaviour
             currentRotationY -= Input.GetAxis("Mouse Y") * sensitivity;
             currentRotationY = Mathf.Clamp(currentRotationY, -90f, 90f);
         }
+
+        // Appliquer la rotation de la caméra
+        transform.rotation = Quaternion.Euler(30, currentRotationX, 0);
+        
+
     }
 }

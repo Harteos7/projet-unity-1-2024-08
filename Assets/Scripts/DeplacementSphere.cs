@@ -6,14 +6,15 @@ public class DeplacementSphere : MonoBehaviour
     private Vector3 destination; // Destination vers laquelle la sphère se déplace
     private bool seDeplacer = false; // Indique si la sphère doit se déplacer
     private Rigidbody rb;
-    private bool isGrounded;
 
     void Start()
     {
         // Récupère le composant Rigidbody attaché au GameObject
         rb = GetComponent<Rigidbody>();
+
+        TeleportPlayer(0, 5, 0);
     }
-    // Update is called once per frame
+
     void Update()
     {
         // Vérifier si le clic gauche de la souris a été effectué
@@ -25,9 +26,14 @@ public class DeplacementSphere : MonoBehaviour
             // Effectuer un raycast pour déterminer où le clic a eu lieu
             if (Physics.Raycast(ray, out hit))
             {
-                // Définir la nouvelle destination avec y toujours égal à 1
-                destination = new Vector3(hit.point.x, 1f, hit.point.z);
-                seDeplacer = true;
+                // Définir la nouvelle destination en fonction de la hauteur du sol détectée
+                if (hit.collider.CompareTag("Ground"))
+                {
+                    // Positionner la destination en utilisant la hauteur du sol + 1 pour la sphère
+                    float hauteurSol = hit.point.y;
+                    destination = new Vector3(hit.point.x, hauteurSol+ 0.5f, hit.point.z);
+                    seDeplacer = true;
+                }
             }
         }
 
@@ -35,27 +41,27 @@ public class DeplacementSphere : MonoBehaviour
         if (seDeplacer)
         {
             // Calculer la direction vers la destination
-            Vector3 direction = (destination - transform.position).normalized;
-            // Déplacer la sphère
-            transform.position += direction * vitesse * Time.deltaTime;
+            Vector3 direction = (destination - rb.position).normalized;
+
+            // Déplacer la sphère en utilisant MovePosition
+            rb.MovePosition(rb.position + direction * vitesse * Time.deltaTime);
 
             // Arrêter le mouvement si la sphère est proche de la destination
-            if (Vector3.Distance(transform.position, destination) < 0.1f)
+            if (Vector3.Distance(rb.position, destination) < 0.1f)
             {
-                transform.position = destination; // S'assurer que la sphère est exactement à la destination
+                rb.MovePosition(destination); // S'assurer que la sphère est exactement à la destination
                 seDeplacer = false;
             }
         }
+    }
 
-        // Méthode pour téléporter le joueur
-        void TeleportPlayer(float x, float y, float z)
-        {
-            // Change directement la position du joueur
-            transform.position = new Vector3(x, y, z);
+    // Méthode pour téléporter le joueur
+    public void TeleportPlayer(float x, float y, float z)
+    {
+        // Change directement la position du joueur
+        rb.position = new Vector3(x, y, z);
 
-            // Si tu veux aussi arrêter tout mouvement en cours
-            rb.velocity = Vector3.zero;
-        }
-
+        // Si tu veux aussi arrêter tout mouvement en cours
+        rb.velocity = Vector3.zero;
     }
 }
