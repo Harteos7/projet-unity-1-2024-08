@@ -8,6 +8,10 @@ public class Camera1 : MonoBehaviour
     public Vector3 offset;    // Décalage de la caméra par rapport au joueur
     public float sensitivity = 3.0f;  // Sensibilité de la souris pour la rotation
 
+    public float zoomSpeed = 4f;  // Vitesse de zoom
+    public float minZoom = 2f;    // Zoom minimum (distance la plus proche)
+    public float maxZoom = 15f;   // Zoom maximum (distance la plus éloignée)
+
     private float currentRotationX = 0f;
     private float currentRotationY = 0f;
 
@@ -15,7 +19,7 @@ public class Camera1 : MonoBehaviour
     {
         if (offset == Vector3.zero)
         {
-            offset = new Vector3(0, 5, -13);  // Par exemple, un décalage par défaut
+            offset = new Vector3(0, 5, -13);  // Décalage par défaut
         }
 
         // Initialisation des rotations actuelles en fonction de la position initiale de la caméra
@@ -34,6 +38,13 @@ public class Camera1 : MonoBehaviour
                 currentRotationY -= Input.GetAxis("Mouse Y") * sensitivity;
                 currentRotationY = Mathf.Clamp(currentRotationY, -20f, 60f);  // Limite la rotation verticale
             }
+
+            // Gestion du zoom avec la molette de la souris
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
+            float zoomAmount = scroll * zoomSpeed;
+
+            // Modifier la distance de l'offset
+            offset = offset.normalized * Mathf.Clamp(offset.magnitude - zoomAmount, minZoom, maxZoom);
 
             // Calcul de la nouvelle position de la caméra
             Quaternion rotation = Quaternion.Euler(currentRotationY, currentRotationX, 0);
