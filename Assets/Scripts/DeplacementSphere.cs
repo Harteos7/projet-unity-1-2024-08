@@ -5,7 +5,14 @@ public class DeplacementSphere : MonoBehaviour
     public float vitesse = 5f; // Vitesse de déplacement de la sphère
     private Vector3 destination; // Destination vers laquelle la sphère se déplace
     private bool seDeplacer = false; // Indique si la sphère doit se déplacer
+    private Rigidbody rb;
+    private bool isGrounded;
 
+    void Start()
+    {
+        // Récupère le composant Rigidbody attaché au GameObject
+        rb = GetComponent<Rigidbody>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -39,5 +46,16 @@ public class DeplacementSphere : MonoBehaviour
                 seDeplacer = false;
             }
         }
+
+        // Méthode pour téléporter le joueur
+        void TeleportPlayer(float x, float y, float z)
+        {
+            // Change directement la position du joueur
+            transform.position = new Vector3(x, y, z);
+
+            // Si tu veux aussi arrêter tout mouvement en cours
+            rb.velocity = Vector3.zero;
+        }
+
     }
 }

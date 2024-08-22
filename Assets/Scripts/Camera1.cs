@@ -1,57 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Camera1 : MonoBehaviour
 {
-    public Transform target;  // Référence au Transform du joueur (Cubro)
-    public Vector3 offset;    // Décalage de la caméra par rapport au joueur
     public float sensitivity = 3.0f;  // Sensibilité de la souris pour la rotation
-
-    public float zoomSpeed = 4f;  // Vitesse de zoom
-    public float minZoom = 2f;    // Zoom minimum (distance la plus proche)
-    public float maxZoom = 15f;   // Zoom maximum (distance la plus éloignée)
+    public float speed = 10f;         // Vitesse de déplacement de la caméra
+    public float zoomSpeed = 4f;      // Vitesse de zoom
+    public float minZoom = 2f;        // Zoom minimum (distance la plus proche)
+    public float maxZoom = 15f;       // Zoom maximum (distance la plus éloignée)
+    public float fixedHeight = 10f;   // Hauteur fixe de la caméra
+    public Vector3 offset = new Vector3(0, 0.5f, -13);  // Décalage initial de la caméra par rapport au joueur
 
     private float currentRotationX = 0f;
     private float currentRotationY = 0f;
 
     void Start()
     {
-        if (offset == Vector3.zero)
-        {
-            offset = new Vector3(0, 5, -13);  // Décalage par défaut
-        }
 
-        // Initialisation des rotations actuelles en fonction de la position initiale de la caméra
-        currentRotationX = transform.eulerAngles.y;
-        currentRotationY = transform.eulerAngles.x;
     }
 
     void LateUpdate()
     {
-        if (target != null)
-        {          
-            if (Input.GetKey(KeyCode.LeftAlt)) // On doit appuyer sur une touche pour faire tourner la caméra
-            {
-                // Rotation basée sur les mouvements de la souris
-                currentRotationX += Input.GetAxis("Mouse X") * sensitivity;
-                currentRotationY -= Input.GetAxis("Mouse Y") * sensitivity;
-                currentRotationY = Mathf.Clamp(currentRotationY, -20f, 60f);  // Limite la rotation verticale
-            }
+        float moveHorizontal = 0f;
+        float moveVertical = 0f;
 
-            // Gestion du zoom avec la molette de la souris
-            float scroll = Input.GetAxis("Mouse ScrollWheel");
-            float zoomAmount = scroll * zoomSpeed;
+        if (Input.GetKey(KeyCode.W))  // Z pour avancer
+        {
+            moveVertical = 1f;
+        }
+        if (Input.GetKey(KeyCode.S))  // S pour reculer
+        {
+            moveVertical = -1f;
+        }
+        if (Input.GetKey(KeyCode.A))  // Q pour aller à gauche
+        {
+            moveHorizontal = -1f;
+        }
+        if (Input.GetKey(KeyCode.D))  // D pour aller à droite
+        {
+            moveHorizontal = 1f;
+        }
 
-            // Modifier la distance de l'offset
-            offset = offset.normalized * Mathf.Clamp(offset.magnitude - zoomAmount, minZoom, maxZoom);
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        movement = transform.TransformDirection(movement);
 
-            // Calcul de la nouvelle position de la caméra
-            Quaternion rotation = Quaternion.Euler(currentRotationY, currentRotationX, 0);
-            transform.position = target.position + rotation * offset;
-            
-            // Faire en sorte que la caméra regarde toujours le joueur
-            transform.LookAt(target);
+        // Appliquer le mouvement en fixant la hauteur Y
+        transform.position += movement * speed * Time.deltaTime;
+        transform.position = new Vector3(transform.position.x, fixedHeight, transform.position.z);
+
+        if (Input.GetKey(KeyCode.LeftAlt))
+        {
+            currentRotationX += Input.GetAxis("Mouse X") * sensitivity;
+            currentRotationY -= Input.GetAxis("Mouse Y") * sensitivity;
+            currentRotationY = Mathf.Clamp(currentRotationY, -90f, 90f);
         }
     }
 }
