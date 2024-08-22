@@ -421,9 +421,6 @@ MonoBehaviour:
   target: {fileID: 1904017100}
   offset: {x: 0, y: 0, z: 0}
   sensitivity: 3
-  zoomSpeed: 4
-  minZoom: 2
-  maxZoom: 15
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
