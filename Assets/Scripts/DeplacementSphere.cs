@@ -8,6 +8,7 @@ public class DeplacementSphere : MonoBehaviour
     public float vitesse ; // Vitesse de déplacement de la sphère
     private Vector3 destination; // Destination vers laquelle la sphère se déplace
     private bool seDeplacer = false; // Indique si la sphère doit se déplacer
+    private bool Deuxiemeclik = false; // Indique si la sphère doit se déplacer
     public float raycastDistance = 100f; // Distance du raycast pour la visualisation
     NavMeshAgent agent;
     public GameObject previsuInstance ;
@@ -22,9 +23,9 @@ public class DeplacementSphere : MonoBehaviour
     }
 
     void Update()
-    {
+    {        
         // Vérifier si le clic gauche de la souris a été effectué
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !Deuxiemeclik)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -45,9 +46,22 @@ public class DeplacementSphere : MonoBehaviour
                     float hauteurSol = hit.point.y;
                     destination = new Vector3(hit.point.x, hauteurSol + 0.5f, hit.point.z);
                     previsuInstance  = Instantiate(previsu, destination, Quaternion.identity);
-                    seDeplacer = true;
+                    Deuxiemeclik = true;
                 }
             }
+        }
+        // Vérifier si le dexieme clic gauche de la souris a été effectué
+        else if (Input.GetMouseButtonDown(0) && Deuxiemeclik)
+        {
+            seDeplacer = true;
+            Deuxiemeclik = false;
+        }
+        // Vérifier si le dexieme clic gauche de la souris a été effectué
+        else if (Input.GetMouseButtonDown(1) && Deuxiemeclik)
+        {
+            seDeplacer = false;
+            Deuxiemeclik = false;
+            if (previsuInstance != null) { Destroy(previsuInstance); }
         }
 
         // Déplacer la sphère vers la destination si nécessaire
