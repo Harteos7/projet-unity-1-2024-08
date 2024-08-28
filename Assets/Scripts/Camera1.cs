@@ -14,7 +14,7 @@ public class Camera1 : MonoBehaviour
     private float currentRotationY = 0f;
 
     void Start()
-    {        
+    {   
         // Réajuster la position de la caméra
         transform.position = new Vector3(0, fixedHeight, -7);
 
