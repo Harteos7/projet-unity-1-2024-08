@@ -11,11 +11,15 @@ public class DeplacementSphere : MonoBehaviour
     private bool Deuxiemeclik = false; // Indique si la sphère doit se déplacer
     public float raycastDistance = 100f; // Distance du raycast pour la visualisation
     NavMeshAgent agent;
+    public LineRenderer lineRenderer;
+    public float pathUpdateInterval = 0.1f;
     public GameObject previsuInstance ;
     public GameObject previsu ;
 
     void Start()
     {
+        lineRenderer = GetComponent<LineRenderer>();
+        InvokeRepeating("UpdatePath", 0f, pathUpdateInterval);
         agent = GetComponent<NavMeshAgent>();
         agent.speed = vitesse;
         agent.acceleration = vitesse;
@@ -23,7 +27,7 @@ public class DeplacementSphere : MonoBehaviour
     }
 
     void Update()
-    {        
+    {   
         // Vérifier si le clic gauche de la souris a été effectué
         if (Input.GetMouseButtonDown(0) && !Deuxiemeclik)
         {
@@ -56,7 +60,7 @@ public class DeplacementSphere : MonoBehaviour
             seDeplacer = true;
             Deuxiemeclik = false;
         }
-        // Vérifier si le dexieme clic gauche de la souris a été effectué
+        // Vérifier si on annule tout les ordres
         else if (Input.GetMouseButtonDown(1) && Deuxiemeclik)
         {
             seDeplacer = false;
@@ -78,5 +82,21 @@ public class DeplacementSphere : MonoBehaviour
                 Destroy(previsuInstance );
             }
         }
+    }
+        private void UpdatePath()
+    {
+        if (agent == null || lineRenderer == null)
+            return;
+
+        // Obtenir le chemin actuel du NavMeshAgent
+        NavMeshPath path = agent.path;
+
+        // Vérifier si le chemin est valide
+        if (path == null || path.corners.Length < 2)
+            return;
+
+        // Mettre à jour le LineRenderer pour correspondre aux coins du chemin
+        lineRenderer.positionCount = path.corners.Length;
+        lineRenderer.SetPositions(path.corners);
     }
 }
