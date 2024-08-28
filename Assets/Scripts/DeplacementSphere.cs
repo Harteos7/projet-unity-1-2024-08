@@ -5,21 +5,21 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class DeplacementSphere : MonoBehaviour
 {
-    public float vitesse ; // Vitesse de déplacement de la sphère
+    public float vitesse; // Vitesse de déplacement de la sphère
     private Vector3 destination; // Destination vers laquelle la sphère se déplace
     private bool seDeplacer = false; // Indique si la sphère doit se déplacer
-    private bool Deuxiemeclik = false; // Indique si la sphère doit se déplacer
+    private bool Deuxiemeclik = false; // Indique si le deuxième clic a été effectué
     public float raycastDistance = 100f; // Distance du raycast pour la visualisation
     NavMeshAgent agent;
     public LineRenderer lineRenderer;
     public float pathUpdateInterval = 0.1f;
-    public GameObject previsuInstance ;
-    public GameObject previsu ;
+    public GameObject previsuInstance;
+    public GameObject previsu;
 
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        InvokeRepeating("UpdatePath", 0f, pathUpdateInterval);
+        lineRenderer.enabled = false; // Désactiver la ligne par défaut
         agent = GetComponent<NavMeshAgent>();
         agent.speed = vitesse;
         agent.acceleration = vitesse;
@@ -28,7 +28,7 @@ public class DeplacementSphere : MonoBehaviour
 
     void Update()
     {   
-        // Vérifier si le clic gauche de la souris a été effectué
+        // Vérifier si le clic gauche de la souris a été effectué (Premier clic)
         if (Input.GetMouseButtonDown(0) && !Deuxiemeclik)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -46,57 +46,53 @@ public class DeplacementSphere : MonoBehaviour
                 // Définir la nouvelle destination en fonction de la hauteur du sol détectée
                 if (hit.collider.CompareTag("Ground"))
                 {
-                    // Positionner la destination en utilisant la hauteur du sol + 1 pour la sphère
+                    // Positionner la destination en utilisant la hauteur du sol + 0.5 pour la sphère
                     float hauteurSol = hit.point.y;
                     destination = new Vector3(hit.point.x, hauteurSol + 0.5f, hit.point.z);
-                    previsuInstance  = Instantiate(previsu, destination, Quaternion.identity);
-                    Deuxiemeclik = true;
+                    previsuInstance = Instantiate(previsu, destination, Quaternion.identity);
+
+                    // Calculer le chemin vers la destination sans déplacer l'agent
+                    NavMeshPath path = new NavMeshPath();
+                    if (agent.CalculatePath(destination, path))
+                    {
+                        lineRenderer.enabled = true; // Activer le LineRenderer pour montrer le chemin
+                        lineRenderer.positionCount = path.corners.Length;
+                        lineRenderer.SetPositions(path.corners);
+                    }
+
+                    Deuxiemeclik = true; // Marquer le premier clic comme terminé
                 }
             }
         }
-        // Vérifier si le dexieme clic gauche de la souris a été effectué
+        // Vérifier si le deuxième clic gauche de la souris a été effectué
         else if (Input.GetMouseButtonDown(0) && Deuxiemeclik)
         {
-            seDeplacer = true;
-            Deuxiemeclik = false;
+            seDeplacer = true; // Commencer à déplacer la sphère
+            Deuxiemeclik = false; // Réinitialiser l'état pour les prochains clics
+            lineRenderer.enabled = false; // Désactiver le LineRenderer pour cacher le chemin
         }
-        // Vérifier si on annule tout les ordres
+        // Vérifier si on annule tous les ordres
         else if (Input.GetMouseButtonDown(1) && Deuxiemeclik)
         {
             seDeplacer = false;
             Deuxiemeclik = false;
             if (previsuInstance != null) { Destroy(previsuInstance); }
+            lineRenderer.enabled = false; // Désactiver le LineRenderer
         }
 
         // Déplacer la sphère vers la destination si nécessaire
         if (seDeplacer)
         {
-            // Update destination if the target moves one unit
+            // Mettre à jour la destination si la cible se déplace d'une unité
             if (Vector3.Distance(destination, transform.position) > 0.5f)
             {
-                agent.SetDestination(destination);
+                agent.SetDestination(destination); // Définir la destination pour le NavMeshAgent
             }
             else
             {
-                seDeplacer = false;
-                Destroy(previsuInstance );
+                seDeplacer = false; // Arrêter de déplacer la sphère
+                Destroy(previsuInstance); // Détruire la prévisualisation lorsque la destination est atteinte
             }
         }
-    }
-        private void UpdatePath()
-    {
-        if (agent == null || lineRenderer == null)
-            return;
-
-        // Obtenir le chemin actuel du NavMeshAgent
-        NavMeshPath path = agent.path;
-
-        // Vérifier si le chemin est valide
-        if (path == null || path.corners.Length < 2)
-            return;
-
-        // Mettre à jour le LineRenderer pour correspondre aux coins du chemin
-        lineRenderer.positionCount = path.corners.Length;
-        lineRenderer.SetPositions(path.corners);
     }
 }

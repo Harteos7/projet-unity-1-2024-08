@@ -76280,12 +76280,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b344a55b1abd4064ea625bb4da96176e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: 20
+  vitesse: 10
   raycastDistance: 100
   lineRenderer: {fileID: 2068095085}
   pathUpdateInterval: 0.1
   previsuInstance: {fileID: 1810475646759467244, guid: 44869081517264942a9a21006e71f75b, type: 3}
-  previsu: {fileID: 1810475646759467244, guid: 44869081517264942a9a21006e71f75b, type: 3}
+  previsu: {fileID: 1810475646759467244, guid: d8d335b603d930b4f8cc2d4fad3dabca, type: 3}
 --- !u!120 &2068095085
 LineRenderer:
   serializedVersion: 2
