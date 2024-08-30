@@ -1,25 +1,28 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Camera1 : MonoBehaviour
 {
     public Transform target;  // Référence au Transform du joueur
     public float sensitivity = 3.0f;  // Sensibilité de la souris pour la rotation
-    public float speed = 10f;         // Vitesse de déplacement de la caméra
-    public float zoomSpeed = 4f;      // Vitesse de zoom
-    public float minZoom = 2f;        // Zoom minimum (distance la plus proche)
-    public float maxZoom = 15f;       // Zoom maximum (distance la plus éloignée)
-    public float fixedHeight = 7f;   // Hauteur fixe de la caméra
-
+    public float speed = 10.0f; // Vitesse de déplacement
+    public float xAdjustment = 0.2f; // Facteur pour réduire le déplacement sur l'axe X
+    public float zoomSpeed = 50f;      // Vitesse de zoom
+    public float height = 12f;    // Hauteur fixe de la caméra
+    public Vector3 offset = new Vector3(0, 2, 0); // Décalage initial de la caméra par rapport à la cible
     private float currentRotationX = 0f;
     private float currentRotationY = 0f;
+    public LayerMask obstacleLayers;  // Couches à considérer comme obstacles
+    public float fixedXRotation = 30f; // Inclinaison fixe de la caméra sur l'axe X
 
     void Start()
-    {   
-        // Réajuster la position de la caméra
-        transform.position = new Vector3(0, fixedHeight, -7);
+    {
+        // Assigner le LayerMask en utilisant le nom "Ground"
+        obstacleLayers = LayerMask.GetMask("Ground");
 
         // Réajuster la rotation pour regarder vers le bas à 30 degrés
-        transform.rotation = Quaternion.Euler(30, transform.rotation.eulerAngles.y, 0);
+        transform.rotation = Quaternion.Euler(fixedXRotation, transform.rotation.eulerAngles.y, 0);
     }
 
     void LateUpdate()
@@ -43,33 +46,93 @@ public class Camera1 : MonoBehaviour
         {
             moveHorizontal = 1f;
         }
+        if (Input.GetKey(KeyCode.Q)) // A pour centrer la camera
+        {
+            transform.position = TeleportCamera();
+            transform.LookAt(target);
+
+            // Mettre à jour les variables de rotation pour refléter la nouvelle rotation de la caméra
+            Vector3 eulerAngles = transform.rotation.eulerAngles;
+            currentRotationX = eulerAngles.y;  // Rotation autour de l'axe Y
+            currentRotationY = eulerAngles.x;  // Rotation autour de l'axe X
+        }
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         movement = transform.TransformDirection(movement);
 
         // Appliquer le mouvement en fixant la hauteur Y
         transform.position += movement * speed * Time.deltaTime;
-        transform.position = new Vector3(transform.position.x, fixedHeight, transform.position.z);
+        transform.position = new Vector3(transform.position.x, height, transform.position.z);
 
         if (Input.GetKey(KeyCode.LeftAlt))
         {
             currentRotationX += Input.GetAxis("Mouse X") * sensitivity;
             currentRotationY -= Input.GetAxis("Mouse Y") * sensitivity;
-            currentRotationY = Mathf.Clamp(currentRotationY, -90f, 90f);
+            currentRotationY = Mathf.Clamp(currentRotationY, -60f, 60f);
+            // Appliquer la rotation de la caméra
+            transform.rotation = Quaternion.Euler(currentRotationY, currentRotationX, 0);
         }
 
-        // Appliquer la rotation de la caméra
-        transform.rotation = Quaternion.Euler(30, currentRotationX, 0);
-        
+        Zoom();
+    }
+
+
+
+
+
+    Vector3 TeleportCamera()
+    {
+        Vector3 directionToTarget = target.position - transform.position;
+        float distanceToTarget = directionToTarget.magnitude;
+
+        // Lancer un Raycast de la caméra vers la cible
+        if (Physics.Raycast(transform.position, directionToTarget.normalized, out RaycastHit hit, distanceToTarget, obstacleLayers))
+        {
+            // Si un obstacle est détecté, se téléporter devant l'obstacle
+            return new Vector3(hit.point.x, hit.point.y, 0);; // Reculer légèrement pour ne pas coller l'obstacle
+        }
+        else
+        {
+            return new Vector3(target.position.x+5, target.position.y+7, target.position.z);
+        }
+    }
+
+
+    void Zoom()
+    {
         // Détection du défilement de la molette de la souris pour zoomer
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll != 0)
         {
-            // Ajuster fixedHeight en fonction du défilement de la molette
-            fixedHeight -= scroll * zoomSpeed;
-            // Clamping pour rester entre minZoom et maxZoom
-            fixedHeight = Mathf.Clamp(fixedHeight, minZoom, maxZoom);
+            // Récupère la direction dans laquelle la caméra regarde dans le système de coordonnées locales
+            Vector3 forwardDirection = transform.forward;
+
+            Debug.Log("Direction : " + forwardDirection);
+
+            // Applique l'ajustement sur l'axe X
+            forwardDirection.x *= xAdjustment;
+
+            // Détermine le vecteur de mouvement en fonction du défilement
+            Vector3 movement = Vector3.zero;
+
+            if (scroll > 0 && transform.position.y > 2)
+            {
+                movement = new Vector3(forwardDirection.x, forwardDirection.y, forwardDirection.z);
+            }
+            else if (scroll < 0 && transform.position.y < 20)
+            {
+                movement = new Vector3(-forwardDirection.x, -forwardDirection.y, -forwardDirection.z);
+            }
+
+            // Normalise le vecteur de mouvement pour éviter une vitesse disproportionnée
+            movement.Normalize();
+
+            // Déplace la caméra
+            transform.position += movement * zoomSpeed * Time.deltaTime;    
+
+            
+            height = transform.position.y;
+            height = Mathf.Clamp(height, 2, 20);       
         }
-        
     }
 }

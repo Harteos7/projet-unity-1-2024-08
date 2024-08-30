@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 47093220}
   - component: {fileID: 47093219}
   - component: {fileID: 47093218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (67)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -984,7 +984,7 @@ GameObject:
   - component: {fileID: 52197624}
   - component: {fileID: 52197623}
   - component: {fileID: 52197622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (41)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1997,7 +1997,7 @@ GameObject:
   - component: {fileID: 142991765}
   - component: {fileID: 142991764}
   - component: {fileID: 142991763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (6)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3910,7 +3910,7 @@ GameObject:
   - component: {fileID: 150821851}
   - component: {fileID: 150821850}
   - component: {fileID: 150821849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door (12)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4649,7 +4649,7 @@ GameObject:
   - component: {fileID: 169108221}
   - component: {fileID: 169108220}
   - component: {fileID: 169108219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (17)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5332,7 +5332,7 @@ GameObject:
   - component: {fileID: 200411852}
   - component: {fileID: 200411851}
   - component: {fileID: 200411850}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (48)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5685,7 +5685,7 @@ GameObject:
   - component: {fileID: 222209632}
   - component: {fileID: 222209631}
   - component: {fileID: 222209630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -7928,7 +7928,7 @@ GameObject:
   - component: {fileID: 226773521}
   - component: {fileID: 226773520}
   - component: {fileID: 226773519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -8667,7 +8667,7 @@ GameObject:
   - component: {fileID: 239970220}
   - component: {fileID: 239970219}
   - component: {fileID: 239970218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -9680,7 +9680,7 @@ GameObject:
   - component: {fileID: 278519496}
   - component: {fileID: 278519495}
   - component: {fileID: 278519494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -10419,7 +10419,7 @@ GameObject:
   - component: {fileID: 308352410}
   - component: {fileID: 308352409}
   - component: {fileID: 308352408}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door (8)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -10993,7 +10993,7 @@ GameObject:
   - component: {fileID: 340223939}
   - component: {fileID: 340223938}
   - component: {fileID: 340223937}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (13)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -11511,7 +11511,7 @@ GameObject:
   - component: {fileID: 345009330}
   - component: {fileID: 345009329}
   - component: {fileID: 345009328}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (65)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -12029,7 +12029,7 @@ GameObject:
   - component: {fileID: 363056191}
   - component: {fileID: 363056190}
   - component: {fileID: 363056189}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (16)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -12382,7 +12382,7 @@ GameObject:
   - component: {fileID: 364973820}
   - component: {fileID: 364973819}
   - component: {fileID: 364973818}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (15)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -12900,7 +12900,7 @@ GameObject:
   - component: {fileID: 376311433}
   - component: {fileID: 376311432}
   - component: {fileID: 376311431}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (56)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -13253,7 +13253,7 @@ GameObject:
   - component: {fileID: 384291837}
   - component: {fileID: 384291836}
   - component: {fileID: 384291835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (12)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -15394,7 +15394,7 @@ GameObject:
   - component: {fileID: 446863400}
   - component: {fileID: 446863399}
   - component: {fileID: 446863398}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (33)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -15912,7 +15912,7 @@ GameObject:
   - component: {fileID: 450061954}
   - component: {fileID: 450061953}
   - component: {fileID: 450061952}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (36)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -16430,7 +16430,7 @@ GameObject:
   - component: {fileID: 465038401}
   - component: {fileID: 465038400}
   - component: {fileID: 465038399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (6)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -16783,7 +16783,7 @@ GameObject:
   - component: {fileID: 466815230}
   - component: {fileID: 466815229}
   - component: {fileID: 466815228}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (62)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -17136,7 +17136,7 @@ GameObject:
   - component: {fileID: 471296386}
   - component: {fileID: 471296385}
   - component: {fileID: 471296384}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (60)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -17489,7 +17489,7 @@ GameObject:
   - component: {fileID: 485411877}
   - component: {fileID: 485411876}
   - component: {fileID: 485411875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door (11)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -18228,7 +18228,7 @@ GameObject:
   - component: {fileID: 502926282}
   - component: {fileID: 502926281}
   - component: {fileID: 502926280}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (7)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -20306,7 +20306,7 @@ GameObject:
   - component: {fileID: 516292206}
   - component: {fileID: 516292205}
   - component: {fileID: 516292204}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door (6)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -20880,7 +20880,7 @@ GameObject:
   - component: {fileID: 522657134}
   - component: {fileID: 522657133}
   - component: {fileID: 522657132}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (51)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -21563,7 +21563,7 @@ GameObject:
   - component: {fileID: 550879060}
   - component: {fileID: 550879059}
   - component: {fileID: 550879058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (74)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -21916,7 +21916,7 @@ GameObject:
   - component: {fileID: 566482752}
   - component: {fileID: 566482751}
   - component: {fileID: 566482750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (23)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -22269,7 +22269,7 @@ GameObject:
   - component: {fileID: 568277335}
   - component: {fileID: 568277334}
   - component: {fileID: 568277333}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (27)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -23447,7 +23447,7 @@ GameObject:
   - component: {fileID: 616761113}
   - component: {fileID: 616761112}
   - component: {fileID: 616761111}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (7)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -23800,7 +23800,7 @@ GameObject:
   - component: {fileID: 620128457}
   - component: {fileID: 620128456}
   - component: {fileID: 620128455}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (11)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -24483,7 +24483,7 @@ GameObject:
   - component: {fileID: 636331978}
   - component: {fileID: 636331977}
   - component: {fileID: 636331976}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (69)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -24836,7 +24836,7 @@ GameObject:
   - component: {fileID: 642402568}
   - component: {fileID: 642402567}
   - component: {fileID: 642402566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -26914,7 +26914,7 @@ GameObject:
   - component: {fileID: 652394555}
   - component: {fileID: 652394554}
   - component: {fileID: 652394553}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (58)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -27267,7 +27267,7 @@ GameObject:
   - component: {fileID: 655455600}
   - component: {fileID: 655455599}
   - component: {fileID: 655455598}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (21)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -27950,7 +27950,7 @@ GameObject:
   - component: {fileID: 717088445}
   - component: {fileID: 717088444}
   - component: {fileID: 717088443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door (10)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -29349,7 +29349,7 @@ GameObject:
   - component: {fileID: 795800104}
   - component: {fileID: 795800103}
   - component: {fileID: 795800102}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (14)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -29702,7 +29702,7 @@ GameObject:
   - component: {fileID: 797098247}
   - component: {fileID: 797098246}
   - component: {fileID: 797098245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (20)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -30550,7 +30550,7 @@ GameObject:
   - component: {fileID: 840744348}
   - component: {fileID: 840744347}
   - component: {fileID: 840744346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (63)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -31068,7 +31068,7 @@ GameObject:
   - component: {fileID: 845222786}
   - component: {fileID: 845222785}
   - component: {fileID: 845222784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (73)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -31421,7 +31421,7 @@ GameObject:
   - component: {fileID: 853492805}
   - component: {fileID: 853492804}
   - component: {fileID: 853492803}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (68)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -31939,7 +31939,7 @@ GameObject:
   - component: {fileID: 900279490}
   - component: {fileID: 900279489}
   - component: {fileID: 900279488}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (44)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -32292,7 +32292,7 @@ GameObject:
   - component: {fileID: 908008379}
   - component: {fileID: 908008378}
   - component: {fileID: 908008377}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (18)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -32645,7 +32645,7 @@ GameObject:
   - component: {fileID: 916252967}
   - component: {fileID: 916252966}
   - component: {fileID: 916252965}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -32998,7 +32998,7 @@ GameObject:
   - component: {fileID: 917976427}
   - component: {fileID: 917976426}
   - component: {fileID: 917976425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (72)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -33351,7 +33351,7 @@ GameObject:
   - component: {fileID: 937069305}
   - component: {fileID: 937069304}
   - component: {fileID: 937069303}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (61)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -33704,7 +33704,7 @@ GameObject:
   - component: {fileID: 938144667}
   - component: {fileID: 938144666}
   - component: {fileID: 938144665}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door (5)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -34443,7 +34443,7 @@ GameObject:
   - component: {fileID: 994090032}
   - component: {fileID: 994090031}
   - component: {fileID: 994090030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (66)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -34961,7 +34961,7 @@ GameObject:
   - component: {fileID: 1014637199}
   - component: {fileID: 1014637198}
   - component: {fileID: 1014637197}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (57)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -35314,7 +35314,7 @@ GameObject:
   - component: {fileID: 1015068287}
   - component: {fileID: 1015068286}
   - component: {fileID: 1015068285}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (34)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -35667,7 +35667,7 @@ GameObject:
   - component: {fileID: 1016889345}
   - component: {fileID: 1016889344}
   - component: {fileID: 1016889343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (70)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -36020,7 +36020,7 @@ GameObject:
   - component: {fileID: 1024437079}
   - component: {fileID: 1024437078}
   - component: {fileID: 1024437077}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (64)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -36373,7 +36373,7 @@ GameObject:
   - component: {fileID: 1028034549}
   - component: {fileID: 1028034548}
   - component: {fileID: 1028034547}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (9)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -36726,7 +36726,7 @@ GameObject:
   - component: {fileID: 1034101640}
   - component: {fileID: 1034101639}
   - component: {fileID: 1034101638}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (37)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -37079,7 +37079,7 @@ GameObject:
   - component: {fileID: 1054252826}
   - component: {fileID: 1054252825}
   - component: {fileID: 1054252824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (50)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -37432,7 +37432,7 @@ GameObject:
   - component: {fileID: 1068846060}
   - component: {fileID: 1068846059}
   - component: {fileID: 1068846058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (8)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -40005,7 +40005,7 @@ GameObject:
   - component: {fileID: 1087940623}
   - component: {fileID: 1087940622}
   - component: {fileID: 1087940621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door (13)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -41074,7 +41074,7 @@ GameObject:
   - component: {fileID: 1123910750}
   - component: {fileID: 1123910749}
   - component: {fileID: 1123910748}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (59)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -41592,7 +41592,7 @@ GameObject:
   - component: {fileID: 1163104722}
   - component: {fileID: 1163104721}
   - component: {fileID: 1163104720}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (12)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -42275,7 +42275,7 @@ GameObject:
   - component: {fileID: 1186077986}
   - component: {fileID: 1186077985}
   - component: {fileID: 1186077984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door (7)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -43014,7 +43014,7 @@ GameObject:
   - component: {fileID: 1190605813}
   - component: {fileID: 1190605812}
   - component: {fileID: 1190605811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (5)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -44927,7 +44927,7 @@ GameObject:
   - component: {fileID: 1204003885}
   - component: {fileID: 1204003884}
   - component: {fileID: 1204003883}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (54)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -45610,7 +45610,7 @@ GameObject:
   - component: {fileID: 1233752066}
   - component: {fileID: 1233752065}
   - component: {fileID: 1233752064}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -46128,7 +46128,7 @@ GameObject:
   - component: {fileID: 1260224546}
   - component: {fileID: 1260224545}
   - component: {fileID: 1260224544}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (30)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -46481,7 +46481,7 @@ GameObject:
   - component: {fileID: 1267660478}
   - component: {fileID: 1267660477}
   - component: {fileID: 1267660476}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (29)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -47164,7 +47164,7 @@ GameObject:
   - component: {fileID: 1280711118}
   - component: {fileID: 1280711117}
   - component: {fileID: 1280711116}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (53)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -47682,7 +47682,7 @@ GameObject:
   - component: {fileID: 1287071630}
   - component: {fileID: 1287071629}
   - component: {fileID: 1287071628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (31)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -48200,7 +48200,7 @@ GameObject:
   - component: {fileID: 1311618084}
   - component: {fileID: 1311618083}
   - component: {fileID: 1311618082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (38)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -49472,7 +49472,7 @@ GameObject:
   - component: {fileID: 1413610363}
   - component: {fileID: 1413610362}
   - component: {fileID: 1413610361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (22)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -49825,7 +49825,7 @@ GameObject:
   - component: {fileID: 1439925229}
   - component: {fileID: 1439925228}
   - component: {fileID: 1439925227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (11)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -51738,7 +51738,7 @@ GameObject:
   - component: {fileID: 1442490114}
   - component: {fileID: 1442490113}
   - component: {fileID: 1442490112}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (43)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -52256,7 +52256,7 @@ GameObject:
   - component: {fileID: 1465324002}
   - component: {fileID: 1465324001}
   - component: {fileID: 1465324000}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (42)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -52609,7 +52609,7 @@ GameObject:
   - component: {fileID: 1473094223}
   - component: {fileID: 1473094222}
   - component: {fileID: 1473094221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (71)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -53127,7 +53127,7 @@ GameObject:
   - component: {fileID: 1488735543}
   - component: {fileID: 1488735542}
   - component: {fileID: 1488735541}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door (9)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -53701,7 +53701,7 @@ GameObject:
   - component: {fileID: 1496467145}
   - component: {fileID: 1496467144}
   - component: {fileID: 1496467143}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (55)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -54054,7 +54054,7 @@ GameObject:
   - component: {fileID: 1498732040}
   - component: {fileID: 1498732039}
   - component: {fileID: 1498732038}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (40)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -54902,7 +54902,7 @@ GameObject:
   - component: {fileID: 1520650119}
   - component: {fileID: 1520650118}
   - component: {fileID: 1520650117}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (25)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -55420,7 +55420,7 @@ GameObject:
   - component: {fileID: 1558539775}
   - component: {fileID: 1558539774}
   - component: {fileID: 1558539773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (52)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -55773,7 +55773,7 @@ GameObject:
   - component: {fileID: 1563679016}
   - component: {fileID: 1563679015}
   - component: {fileID: 1563679014}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (9)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -57686,7 +57686,7 @@ GameObject:
   - component: {fileID: 1585128504}
   - component: {fileID: 1585128503}
   - component: {fileID: 1585128502}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (26)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -58039,7 +58039,7 @@ GameObject:
   - component: {fileID: 1593853886}
   - component: {fileID: 1593853885}
   - component: {fileID: 1593853884}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -58778,7 +58778,7 @@ GameObject:
   - component: {fileID: 1613795049}
   - component: {fileID: 1613795048}
   - component: {fileID: 1613795047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -59131,7 +59131,7 @@ GameObject:
   - component: {fileID: 1689338049}
   - component: {fileID: 1689338048}
   - component: {fileID: 1689338047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (14)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -61044,7 +61044,7 @@ GameObject:
   - component: {fileID: 1697250776}
   - component: {fileID: 1697250775}
   - component: {fileID: 1697250774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (8)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -61397,7 +61397,7 @@ GameObject:
   - component: {fileID: 1697663992}
   - component: {fileID: 1697663991}
   - component: {fileID: 1697663990}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (47)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -61979,7 +61979,7 @@ GameObject:
   - component: {fileID: 1721882419}
   - component: {fileID: 1721882418}
   - component: {fileID: 1721882417}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (24)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -62332,7 +62332,7 @@ GameObject:
   - component: {fileID: 1731499080}
   - component: {fileID: 1731499079}
   - component: {fileID: 1731499078}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (35)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -62685,7 +62685,7 @@ GameObject:
   - component: {fileID: 1739276613}
   - component: {fileID: 1739276612}
   - component: {fileID: 1739276611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (46)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -63698,7 +63698,7 @@ GameObject:
   - component: {fileID: 1773191959}
   - component: {fileID: 1773191958}
   - component: {fileID: 1773191957}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (19)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -64051,7 +64051,7 @@ GameObject:
   - component: {fileID: 1793965057}
   - component: {fileID: 1793965056}
   - component: {fileID: 1793965055}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (4)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -64404,7 +64404,7 @@ GameObject:
   - component: {fileID: 1795218672}
   - component: {fileID: 1795218671}
   - component: {fileID: 1795218670}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (10)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -66317,7 +66317,7 @@ GameObject:
   - component: {fileID: 1814029223}
   - component: {fileID: 1814029222}
   - component: {fileID: 1814029221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (5)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -67165,7 +67165,7 @@ GameObject:
   - component: {fileID: 1833846027}
   - component: {fileID: 1833846026}
   - component: {fileID: 1833846025}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door (4)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -67904,7 +67904,7 @@ GameObject:
   - component: {fileID: 1849305142}
   - component: {fileID: 1849305141}
   - component: {fileID: 1849305140}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (28)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -68257,7 +68257,7 @@ GameObject:
   - component: {fileID: 1864188527}
   - component: {fileID: 1864188526}
   - component: {fileID: 1864188525}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (10)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -68775,7 +68775,7 @@ GameObject:
   - component: {fileID: 1882799732}
   - component: {fileID: 1882799731}
   - component: {fileID: 1882799730}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (45)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -69128,7 +69128,7 @@ GameObject:
   - component: {fileID: 1903648254}
   - component: {fileID: 1903648253}
   - component: {fileID: 1903648252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -70197,7 +70197,7 @@ GameObject:
   - component: {fileID: 1934286857}
   - component: {fileID: 1934286856}
   - component: {fileID: 1934286855}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (32)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -71045,7 +71045,7 @@ GameObject:
   - component: {fileID: 2003181886}
   - component: {fileID: 2003181885}
   - component: {fileID: 2003181884}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (49)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -71563,7 +71563,7 @@ GameObject:
   - component: {fileID: 2017319158}
   - component: {fileID: 2017319157}
   - component: {fileID: 2017319156}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (13)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -73570,10 +73570,14 @@ MonoBehaviour:
   target: {fileID: 2068095083}
   sensitivity: 3
   speed: 10
-  zoomSpeed: 4
-  minZoom: 2
-  maxZoom: 15
-  fixedHeight: 7
+  xAdjustment: 0.2
+  zoomSpeed: 0.5
+  height: 12
+  offset: {x: 0, y: 2, z: 0}
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  fixedXRotation: 30
 --- !u!1 &2026627189
 GameObject:
   m_ObjectHideFlags: 0
@@ -73588,7 +73592,7 @@ GameObject:
   - component: {fileID: 2026627192}
   - component: {fileID: 2026627191}
   - component: {fileID: 2026627190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stairs (4)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -75666,7 +75670,7 @@ GameObject:
   - component: {fileID: 2057779480}
   - component: {fileID: 2057779479}
   - component: {fileID: 2057779478}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (39)
   m_TagString: Ground
   m_Icon: {fileID: 0}
