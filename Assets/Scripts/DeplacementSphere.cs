@@ -112,5 +112,13 @@ public class DeplacementSphere : MonoBehaviour
             if (previsuInstance != null) { Destroy(previsuInstance); }
             lineRenderer.enabled = false; // Désactiver le LineRenderer
         }
+
+        // On annule le déplacement
+        if (Input.GetMouseButtonDown(1) && seDeplacer.Count > 0) {
+            seDeplacer.RemoveAt(0); // arrête de se déplacer
+            agent.isStopped = true;
+            agent.ResetPath();
+            if (previsuInstance != null) { Destroy(previsuInstance); }
+        }
     }
 }
