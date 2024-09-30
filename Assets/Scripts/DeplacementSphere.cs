@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,7 +10,6 @@ public class DeplacementSphere : MonoBehaviour
 {
     public float vitesse; // Vitesse de déplacement de la sphère
     private Vector3 destination; // Destination vers laquelle la sphère se déplace
-    private bool seDeplacer = false; // Indique si la sphère doit se déplacer
     private bool Deuxiemeclik = false; // Indique si le deuxième clic a été effectué
     public float raycastDistance = 100f; // Distance du raycast pour la visualisation
     NavMeshAgent agent;
@@ -15,6 +17,7 @@ public class DeplacementSphere : MonoBehaviour
     public float pathUpdateInterval = 0.1f;
     public GameObject previsuInstance;
     public GameObject previsu;
+    public List<Vector3> seDeplacer;
 
     void Start()
     {
@@ -22,14 +25,45 @@ public class DeplacementSphere : MonoBehaviour
         lineRenderer.enabled = false; // Désactiver la ligne par défaut
         agent = GetComponent<NavMeshAgent>();
         agent.speed = vitesse;
-        agent.acceleration = vitesse;
+        agent.acceleration = vitesse*100;
         destination = agent.destination;
     }
 
     void Update()
     {   
+        ActionClik();
+
+        // Déplacer la sphère vers la destination si nécessaire
+        if (seDeplacer.Count > 0)
+        {
+            // Mettre à jour la destination si le personage est trops loin
+            if (Vector3.Distance(destination, transform.position) > 0.5f)
+            {
+                agent.SetDestination(destination); // Définir la destination pour le NavMeshAgent
+            }
+            else
+            {
+                seDeplacer.RemoveAt(0); // suprimer la destination atteinte
+                if (previsuInstance != null) { Destroy(previsuInstance); } // Détruire la prévisualisation lorsque la destination est atteinte
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.E)) {
+            foreach (var i in seDeplacer) {
+                Debug.Log(i);
+                Debug.Log(seDeplacer.Count);
+            }
+
+        }
+    }
+
+
+
+
+
+    void ActionClik() {
         // Vérifier si le clic gauche de la souris a été effectué (Premier clic)
-        if (Input.GetMouseButtonDown(0) && !Deuxiemeclik)
+        if (Input.GetMouseButtonDown(0) && !Deuxiemeclik && seDeplacer.Count == 0)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -67,32 +101,16 @@ public class DeplacementSphere : MonoBehaviour
         // Vérifier si le deuxième clic gauche de la souris a été effectué
         else if (Input.GetMouseButtonDown(0) && Deuxiemeclik)
         {
-            seDeplacer = true; // Commencer à déplacer la sphère
+            seDeplacer.Add(destination); // Commencer à déplacer la sphère
             Deuxiemeclik = false; // Réinitialiser l'état pour les prochains clics
             lineRenderer.enabled = false; // Désactiver le LineRenderer pour cacher le chemin
         }
         // Vérifier si on annule tous les ordres
         else if (Input.GetMouseButtonDown(1) && Deuxiemeclik)
         {
-            seDeplacer = false;
             Deuxiemeclik = false;
             if (previsuInstance != null) { Destroy(previsuInstance); }
             lineRenderer.enabled = false; // Désactiver le LineRenderer
-        }
-
-        // Déplacer la sphère vers la destination si nécessaire
-        if (seDeplacer)
-        {
-            // Mettre à jour la destination si la cible se déplace d'une unité
-            if (Vector3.Distance(destination, transform.position) > 0.5f)
-            {
-                agent.SetDestination(destination); // Définir la destination pour le NavMeshAgent
-            }
-            else
-            {
-                seDeplacer = false; // Arrêter de déplacer la sphère
-                Destroy(previsuInstance); // Détruire la prévisualisation lorsque la destination est atteinte
-            }
         }
     }
 }
