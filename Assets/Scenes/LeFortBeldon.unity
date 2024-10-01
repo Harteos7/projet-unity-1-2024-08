@@ -73568,16 +73568,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2068095083}
-  sensitivity: 3
-  speed: 10
-  xAdjustment: 0.2
-  zoomSpeed: 10
-  height: 12
-  offset: {x: 0, y: 2, z: 0}
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 64
-  fixedXRotation: 30
+  sensitivity: 3
+  speed: 10
+  xAdjustment: 0.2
+  height: 12
+  distanceCamera: 10
 --- !u!1 &2026627189
 GameObject:
   m_ObjectHideFlags: 0
@@ -76285,11 +76283,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitesse: 10
+  hauteur: 0.5
   raycastDistance: 100
   lineRenderer: {fileID: 2068095085}
   pathUpdateInterval: 0.1
-  previsuInstance: {fileID: 1810475646759467244, guid: 44869081517264942a9a21006e71f75b, type: 3}
-  previsu: {fileID: 1810475646759467244, guid: d8d335b603d930b4f8cc2d4fad3dabca, type: 3}
+  seDeplacer: 0
+  Deplacements: []
 --- !u!120 &2068095085
 LineRenderer:
   serializedVersion: 2
